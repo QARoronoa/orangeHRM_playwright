@@ -12,6 +12,7 @@ class HomePage(BasePage):
         self.menu_user = page.locator(".oxd-userdropdown-name")
         self.bouton_logout = page.locator("a.oxd-userdropdown-link", has_text="Logout")
         self.volet_gauche_menus = page.locator(".oxd-main-menu-item-wrapper")
+        self.menu_my_info = page.locator('span.oxd-text', has_text="My Info")
 
 
         #methodes
@@ -41,3 +42,7 @@ class HomePage(BasePage):
             "Buzz"
         ])
         print(menus_liste)
+
+    def cliquer_sur_my_info(self):
+        self.cliquer_sur_un_element(self.menu_my_info)
+        self.page.wait_for_timeout(2000)
