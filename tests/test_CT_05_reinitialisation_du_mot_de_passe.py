@@ -12,4 +12,4 @@ def test_reinitialisation_du_mdp(setup):
     login_page.cliquer_sur_le_bouton_reset_password()
     login_page.verifier_l_envoi_du_lien_reinitialisation()
 
-    time.sleep(3)
+

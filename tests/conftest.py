@@ -1,5 +1,6 @@
 import pytest
 from playwright.sync_api import Playwright
+from data.refactor_data import refactor_data
 
 @pytest.fixture(scope="function")
 def setup(playwright: Playwright):
@@ -12,3 +13,8 @@ def setup(playwright: Playwright):
 
     context.close()
     browser.close()
+
+
+@pytest.fixture(scope="function")
+def fill_form_addEmployee():
+    return refactor_data.add_employee()
