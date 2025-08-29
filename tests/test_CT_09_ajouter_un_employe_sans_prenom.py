@@ -4,7 +4,7 @@ from pagesObject.HomePage import HomePage
 from pagesObject.LoginPage import LoginPage
 from pagesObject.PimPage import PimPage
 
-def test_ajouter_un_employer(setup, fill_form_addEmployee):
+def test_ajouter_un_employe_sans_prenom(setup, fill_form_addEmployee):
     login_page = LoginPage(setup)
     home_page = HomePage(setup)
     pim_page = PimPage(setup)
@@ -23,10 +23,9 @@ def test_ajouter_un_employer(setup, fill_form_addEmployee):
     pim_page.cliquer_sur_bouton_add_employee()
 
     #remplir formulaire
-    pim_page.remplir_formulaire_add_employee(fill_form_addEmployee["firstName"],
+    pim_page.remplir_formulaire_add_employee(fill_form_addEmployee["firstName2"],
                                              fill_form_addEmployee["lastName"])
     pim_page.ajouter_une_photo()
     pim_page.cliquer_sur_save()
-
-    time.sleep(5)
+    pim_page.verifier_message_erreur_champ_prenom()
 
