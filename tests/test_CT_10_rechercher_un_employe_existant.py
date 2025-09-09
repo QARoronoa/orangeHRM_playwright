@@ -4,7 +4,7 @@ from pagesObject.HomePage import HomePage
 from pagesObject.LoginPage import LoginPage
 from pagesObject.PimPage import PimPage
 
-def test_rechercher_un_employe_existant(setup, fill_form_addEmployee):
+def test_rechercher_un_employer_existant(setup, fill_form_addEmployee):
     login_page = LoginPage(setup)
     home_page = HomePage(setup)
     pim_page = PimPage(setup)
