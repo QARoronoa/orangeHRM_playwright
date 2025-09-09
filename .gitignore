@@ -1,6 +1,7 @@
 # 🔍 Allure reports (résultats et HTML généré)
 allure-results/
 allure-report/
+clean/
 
 # 🎥 Playwright test videos
 videos/

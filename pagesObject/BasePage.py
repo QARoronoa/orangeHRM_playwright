@@ -13,11 +13,11 @@ class BasePage:
     def verifier_titre_de_la_page(self, title):
         expect(self.page).to_have_title(title)
 
-    @allure.step('L element est visible')
+    @allure.step('L element est visible : {locator}')
     def verifier_element_visible(self, locator: Locator):
         expect(locator).to_be_visible()
 
-    @allure.step('clique sur l element OK')
+    @allure.step('clique sur l element : {locator} OK')
     def cliquer_sur_un_element(self, locator: Locator):
         expect(locator).to_be_visible()
         expect(locator).to_be_enabled()

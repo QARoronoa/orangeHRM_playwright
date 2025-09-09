@@ -17,7 +17,10 @@ class PimPage(BasePage):
         self.champ_lastName = page.get_by_placeholder("Last Name")
         self.bouton_ajout_photo = page.locator(".employee-image-wrapper")
         self.bouton_save = page.get_by_role("button", name="Save")
-
+        self.erreur_champ_prenom = page.locator("span.oxd-input-field-error-message", has_text="Required")
+        self.employe_name = page.get_by_placeholder("Type for hints...").nth(0)
+        self.bouton_search = page.get_by_role("button", name="Search")
+        self.recherche_OK= page.locator('span.oxd-text', has_text="(1) Record Found")
 
         #methodes
     def cliquer_sur_menu_pim(self):
@@ -40,3 +43,16 @@ class PimPage(BasePage):
 
     def cliquer_sur_save(self):
         self.cliquer_sur_un_element(self.bouton_save)
+
+    def verifier_message_erreur_champ_prenom(self):
+        self.verifier_le_texte_de_lelement(self.erreur_champ_prenom, "Required")
+
+    def entrer_le_nom_dun_employeur(self):
+        self.remplir_un_champ(self.employe_name, "Amelia Brown")
+
+    def cliquer_sur_le_bouton_search(self):
+        self.cliquer_sur_un_element(self.bouton_search)
+        # self.verifier_le_texte_de_lelement(self.recherche_OK, "(1) Record Found")
+
+    def verifier_la_recherche_employer(self):
+        self.verifier_le_texte_de_lelement(self.recherche_OK, "(1) Record Found")
