@@ -21,6 +21,7 @@ class PimPage(BasePage):
         self.employe_name = page.get_by_placeholder("Type for hints...").nth(0)
         self.bouton_search = page.get_by_role("button", name="Search")
         self.recherche_OK= page.locator('span.oxd-text', has_text="(1) Record Found")
+        self.recherche_NOK = page.locator('span.oxd-text', has_text="No Records Found")
 
         #methodes
     def cliquer_sur_menu_pim(self):
@@ -47,12 +48,12 @@ class PimPage(BasePage):
     def verifier_message_erreur_champ_prenom(self):
         self.verifier_le_texte_de_lelement(self.erreur_champ_prenom, "Required")
 
-    def entrer_le_nom_dun_employeur(self):
-        self.remplir_un_champ(self.employe_name, "Amelia Brown")
+    def entrer_le_nom_dun_employeur(self,text):
+        self.remplir_un_champ(self.employe_name, text)
 
     def cliquer_sur_le_bouton_search(self):
         self.cliquer_sur_un_element(self.bouton_search)
         # self.verifier_le_texte_de_lelement(self.recherche_OK, "(1) Record Found")
 
-    def verifier_la_recherche_employer(self):
-        self.verifier_le_texte_de_lelement(self.recherche_OK, "(1) Record Found")
+    def verifier_la_recherche_employer(self, text):
+        self.verifier_le_texte_de_lelement(self.recherche_NOK, text)

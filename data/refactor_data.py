@@ -8,7 +8,7 @@ class refactor_data:
     @staticmethod
     def add_employee():
         return {
-            "firstName" : faker.first_name(),
-            "firstName2": " ",
-            "lastName" : faker.last_name()
+            "firstName" : "ussop",
+            "firstName2": faker.first_name(),
+            "lastName" : "hammer"
         }
