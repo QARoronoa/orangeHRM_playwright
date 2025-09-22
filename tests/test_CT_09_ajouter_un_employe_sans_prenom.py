@@ -23,7 +23,7 @@ def test_ajouter_un_employe_sans_prenom(setup, fill_form_addEmployee):
     pim_page.cliquer_sur_bouton_add_employee()
 
     #remplir formulaire
-    pim_page.remplir_formulaire_add_employee(fill_form_addEmployee["firstName2"],
+    pim_page.remplir_formulaire_add_employee(fill_form_addEmployee["firstNameEmpty"],
                                              fill_form_addEmployee["lastName"])
     pim_page.ajouter_une_photo()
     pim_page.cliquer_sur_save()

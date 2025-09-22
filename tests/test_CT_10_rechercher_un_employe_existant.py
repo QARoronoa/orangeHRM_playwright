@@ -22,7 +22,7 @@ def test_rechercher_un_employer_existant(setup, fill_form_addEmployee):
     #entrer le nom dun employe
     pim_page.entrer_le_nom_dun_employeur("issa")
     pim_page.cliquer_sur_le_bouton_search()
-    pim_page.verifier_la_recherche_employer("(1) Record Found")
+    pim_page.verifier_la_recherche_employer_OK("(1) Record Found")
 
 
 

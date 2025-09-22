@@ -13,6 +13,8 @@ class HomePage(BasePage):
         self.bouton_logout = page.locator("a.oxd-userdropdown-link", has_text="Logout")
         self.volet_gauche_menus = page.locator(".oxd-main-menu-item-wrapper")
         self.menu_my_info = page.locator('span.oxd-text', has_text="My Info")
+        self.menu_leave = page.locator('span.oxd-text', has_text="Leave")
+
 
 
         #methodes
@@ -46,3 +48,8 @@ class HomePage(BasePage):
     def cliquer_sur_my_info(self):
         self.cliquer_sur_un_element(self.menu_my_info)
         self.page.wait_for_timeout(2000)
+
+    def cliquer_sur_Leave(self):
+        self.cliquer_sur_un_element(self.menu_leave)
+        self.page.wait_for_timeout(2000)
+

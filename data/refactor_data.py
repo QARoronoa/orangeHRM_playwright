@@ -9,6 +9,7 @@ class refactor_data:
     def add_employee():
         return {
             "firstName" : "ussop",
+            "firstNameEmpty": "",
             "firstName2": faker.first_name(),
             "lastName" : "hammer"
         }

@@ -55,5 +55,8 @@ class PimPage(BasePage):
         self.cliquer_sur_un_element(self.bouton_search)
         # self.verifier_le_texte_de_lelement(self.recherche_OK, "(1) Record Found")
 
-    def verifier_la_recherche_employer(self, text):
+    def verifier_la_recherche_employer_OK(self, text):
+        self.verifier_le_texte_de_lelement(self.recherche_OK, text)
+
+    def verifier_la_recherche_employer_NOK(self, text):
         self.verifier_le_texte_de_lelement(self.recherche_NOK, text)

@@ -27,8 +27,8 @@ def test_rechercher_un_employer_existant(setup, fill_form_addEmployee):
         pim_page.entrer_le_nom_dun_employeur("kjkjkj")
         pim_page.cliquer_sur_le_bouton_search()
 
-    with allure.step("Confirmation de la recherche nul"):
-        pim_page.verifier_la_recherche_employer("No Records Found")
+    with allure.step("Résultat attendu : message 'No Records Found'"):
+        pim_page.verifier_la_recherche_employer_NOK("No Records Found")
 
 
 
